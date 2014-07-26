@@ -15,8 +15,14 @@
 # Inherit device configuration
 $(call inherit-product, device/semc/satsuma/full_satsuma.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+# Device identifier. This must come after all inclusions
+PRODUCT_RELEASE_NAME := satsuma
+PRODUCT_DEVICE := satsuma
+PRODUCT_NAME := nameless_satsuma
+PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
+PRODUCT_BRAND := semc
+PRODUCT_MODEL := Xperia Active
+PRODUCT_MANUFACTURER := SEMC
 
 # Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -25,12 +31,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="SEMC/ST17i_1254-2184/ST17i:4.0.4/4.1.B.0.587/tL1_3w:user/release-keys" \
     PRIVATE_BUILD_DESC="ST17i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
 
-# Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_satsuma
-PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
-
-# Release name
-PRODUCT_RELEASE_NAME := satsuma
-
-# Custom tag for unofficial builds
-TARGET_UNOFFICIAL_BUILD_ID := LegacyXperia
